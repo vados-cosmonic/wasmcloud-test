@@ -8,6 +8,7 @@ pub mod cli;
 pub use nkeys;
 pub use regex;
 
+#[cfg(feature = "smithy-bindgen")]
 pub mod testing {
 
     smithy_bindgen::smithy_bindgen!("testing/testing.smithy", "org.wasmcloud.interface.testing");

@@ -1,4 +1,4 @@
-#![cfg(not(target_arch = "wasm32"))]
+#![cfg(all(feature = "smithy-bindgen", not(target_arch = "wasm32")))]
 //!
 //! simple test harness to load a capability provider and test it
 //!

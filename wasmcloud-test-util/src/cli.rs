@@ -1,6 +1,7 @@
 //! cli utilities
 use std::io::Write;
 
+#[cfg(feature = "smithy-bindgen")]
 use crate::testing::TestResult;
 use serde::Deserialize;
 use termcolor::{Color, ColorChoice, ColorSpec, StandardStream, WriteColor};
@@ -11,6 +12,7 @@ struct ErrorReport {
     error: String,
 }
 
+#[cfg(feature = "smithy-bindgen")]
 /// Prints test results (with handy color!) to the terminal
 // NOTE(thomastaylor312): We are unwrapping all writing IO errors (which matches the behavior in the
 // println! macro) and swallowing the color change errors as there isn't much we can do if they fail
